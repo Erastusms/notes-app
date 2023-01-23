@@ -45,14 +45,15 @@ function NoteDetail(noteDetail) {
 }
 
 NoteDetail.propTypes = {
-  noteDetail: PropTypes.object.isRequired,
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
-  archived: PropTypes.bool.isRequired,
-  createdAt: PropTypes.string.isRequired,
-  onDelete: PropTypes.func.isRequired,
-  onArchive: PropTypes.func.isRequired,
+  noteDetail: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+    archived: PropTypes.bool.isRequired,
+    createdAt: PropTypes.string.isRequired,
+    onArchive: PropTypes.func.isRequired,
+    onUnArchive: PropTypes.func.isRequired,
+  }),
 };
 
 export default NoteDetail;
