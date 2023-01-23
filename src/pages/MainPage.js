@@ -19,14 +19,12 @@ function MainPageWrapper({ pages }) {
   };
 
   return (
-    <>
-      <MainPage
-        defaultKeyword={keyword}
-        keywordChange={changeSearchParams}
-        pages={pages}
-        navigateTo={homeNavigate}
-      />
-    </>
+    <MainPage
+      defaultKeyword={keyword}
+      keywordChange={changeSearchParams}
+      pages={pages}
+      navigateTo={homeNavigate}
+    />
   );
 }
 
@@ -61,7 +59,7 @@ class MainPage extends React.Component {
         .includes(this.state.keyword.toLowerCase());
     });
     return (
-      <section className={pages === 'active' ? 'homepage' : 'archived'}>
+      <section>
         <h2>Catatan {pages === 'active' ? 'Aktif' : 'Arsip'}</h2>
         <SearchBar
           keyword={this.props.keyword}
@@ -92,7 +90,14 @@ class MainPage extends React.Component {
 }
 
 MainPageWrapper.propType = {
-  pages: PropTypes.string.isRequired,
+  pages: PropTypes.oneOf(['active', 'archived']).isRequired,
+};
+
+MainPage.propType = {
+  defaultKeyword: PropTypes.string,
+  keywordChange: PropTypes.func.isRequired,
+  pages: PropTypes.oneOf(['active', 'archived']).isRequired,
+  navigateTo: PropTypes.func.isRequired,
 };
 
 export default MainPageWrapper;

@@ -19,7 +19,7 @@ function NotesApp() {
         <Routes>
           <Route path="/" element={<MainPage pages={'active'} />} />
           <Route path="/notes/new" element={<AddPage />} />
-          <Route path="/archives" element={<MainPage pages={'archive'} />} />
+          <Route path="/archives" element={<MainPage pages={'archived'} />} />
           <Route path="/note/:id" element={<DetailPage />} />
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>
