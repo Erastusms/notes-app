@@ -3,15 +3,15 @@ import NoteInput from '../components/NoteInput';
 import { useNavigate } from 'react-router-dom';
 import { addNote } from '../utils/data';
 
-function AddPage() {
+const AddPage = () => {
   const navigate = useNavigate();
 
-  function onAddNoteHandler(notes) {
+  const onAddNoteHandler = (notes) => {
     addNote(notes);
     navigate('/');
-  }
+  };
 
   return <NoteInput addNote={onAddNoteHandler} />;
-}
+};
 
 export default AddPage;

@@ -1,19 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { showFormattedDate, deleteNote } from '../utils/data';
+import { showFormattedDate } from '../utils/data';
 import { FiTrash } from 'react-icons/fi';
 import { MdOutlineArchive, MdOutlineUnarchive } from 'react-icons/md';
-import { useNavigate } from 'react-router-dom';
 
-function NoteDetail(noteDetail) {
-  const { id, title, createdAt, body, archived, onArchive, onUnArchive } =
-    noteDetail;
-
-  const navigate = useNavigate();
-  const onDelete = (id) => {
-    deleteNote(id);
-    navigate(archived ? '/archives' : '/');
-  };
+const NoteDetail = ({ data, onArchive, onUnArchive, onDelete }) => {
+  const { id, title, createdAt, body, archived } = data;
 
   return (
     <div>
@@ -35,25 +27,20 @@ function NoteDetail(noteDetail) {
           className="action"
           type="button"
           title="Hapus"
-          onClick={() => onDelete(id)}
+          onClick={() => onDelete({ id, archived })}
         >
           <FiTrash />
         </button>
       </div>
     </div>
   );
-}
+};
 
 NoteDetail.propTypes = {
-  noteDetail: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    body: PropTypes.string.isRequired,
-    archived: PropTypes.bool.isRequired,
-    createdAt: PropTypes.string.isRequired,
-    onArchive: PropTypes.func.isRequired,
-    onUnArchive: PropTypes.func.isRequired,
-  }),
+  data: PropTypes.object.isRequired,
+  onArchive: PropTypes.func.isRequired,
+  onUnArchive: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default NoteDetail;
