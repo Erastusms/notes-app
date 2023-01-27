@@ -55,9 +55,4 @@ const DetailPage = () => {
   );
 };
 
-// DetailPage.propType = {
-//   id: PropTypes.string.isRequired,
-//   navigate: PropTypes.func.isRequired,
-// };
-
 export default DetailPage;

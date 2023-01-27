@@ -19,7 +19,7 @@ const RegisterPage = () => {
 
   return (
     <section className="register-page">
-      <h2>Gak perlu serius-serius ya isinya ...</h2>
+      <h2>Isi data diri anda</h2>
       <FormInput
         handler={onRegisterHandler}
         data={registerMapping}

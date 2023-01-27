@@ -1,8 +1,7 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import FormInput from '../components/FormInput';
-// import LoginInput from '../components/LoginInput';
 import { login } from '../utils/data';
 import { inputEmail, inputPassword } from '../helpers';
 
@@ -16,20 +15,13 @@ const LoginPage = ({ loginSuccess }) => {
   const loginMapping = {
     formClassname: 'input-login',
     formInput: [inputEmail, inputPassword],
-    btnLabel: 'Masuk'
+    btnLabel: 'Masuk',
   };
-
-  // async function loginFunction({})
 
   return (
     <section className="login-page">
-      <h2>Silakan masuk untuk melanjutkan ...</h2>
-      {/* <LoginInput login={onLoginHandler} /> */}
-      <FormInput
-        handler={onLoginHandler}
-        data={loginMapping}
-        // key={loginMapping.className}
-      />
+      <h2>Login terlebih dahulu</h2>
+      <FormInput handler={onLoginHandler} data={loginMapping} />
       <p>
         Belum punya akun? <Link to="/register">Daftar di sini.</Link>
       </p>
@@ -37,8 +29,8 @@ const LoginPage = ({ loginSuccess }) => {
   );
 };
 
-// LoginPage.propTypes = {
-//   loginSuccess: PropTypes.func.isRequired,
-// };
+LoginPage.propTypes = {
+  loginSuccess: PropTypes.func.isRequired,
+};
 
 export default LoginPage;

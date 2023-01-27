@@ -91,7 +91,7 @@ async function addNote({ title, body }) {
   if (responseJson.status !== 'success') {
     return { error: true, data: null };
   }
-  
+
   return { error: false, data: responseJson.data };
 }
 
@@ -102,7 +102,6 @@ async function getActiveNotes() {
   if (responseJson.status !== 'success') {
     return { error: true, data: null };
   }
-  // const createdAt = showFormattedDate(responseJson.data.createdAt);
 
   return { error: false, data: responseJson.data };
 }
