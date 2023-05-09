@@ -86,7 +86,7 @@ class NotesApp extends React.Component {
                   path="/notes-app/*"
                   element={<LoginPage loginSuccess={this.onLoginSuccess} />}
                 />
-                <Route path="/register" element={<RegisterPage />} />
+                <Route path="/notes-app/register" element={<RegisterPage />} />
               </Routes>
             </main>
             <ToggleTheme />
