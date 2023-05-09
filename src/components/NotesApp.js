@@ -83,7 +83,7 @@ class NotesApp extends React.Component {
             <main>
               <Routes>
                 <Route
-                  path="/*"
+                  path="/notes-app/*"
                   element={<LoginPage loginSuccess={this.onLoginSuccess} />}
                 />
                 <Route path="/register" element={<RegisterPage />} />
@@ -100,7 +100,7 @@ class NotesApp extends React.Component {
         <div className="app-container">
           <header className="notes-app__header">
             <h1>
-              <Link to="/">Notes</Link>
+              <Link to="/notes-app">Notes</Link>
             </h1>
             <Navigation
               logout={this.onLogout}
@@ -109,12 +109,12 @@ class NotesApp extends React.Component {
           </header>
           <main>
             <Routes>
-              <Route path="/" element={<MainPage isActiveNotes />} />
-              <Route path="/register" element={<RegisterPage />} />
-              <Route path="/notes/new" element={<AddPage />} />
-              <Route path="/archives" element={<MainPage />} />
-              <Route path="/note/:id" element={<DetailPage />} />
-              <Route path="/*" element={<NotFoundPage />} />
+              <Route path="/notes-app" element={<MainPage isActiveNotes />} />
+              <Route path="/notes-app/register" element={<RegisterPage />} />
+              <Route path="/notes-app/notes/new" element={<AddPage />} />
+              <Route path="/notes-app/archives" element={<MainPage />} />
+              <Route path="/notes-app/note/:id" element={<DetailPage />} />
+              <Route path="/notes-app/*" element={<NotFoundPage />} />
             </Routes>
           </main>
           <ToggleTheme />

@@ -52,7 +52,7 @@ const MainPage = ({ isActiveNotes }) => {
             className="action"
             type="button"
             title="Tambah"
-            onClick={() => navigate('/notes/new')}
+            onClick={() => navigate('/notes-app/notes/new')}
           >
             <FiPlus />
           </button>

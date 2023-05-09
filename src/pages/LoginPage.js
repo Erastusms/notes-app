@@ -23,7 +23,7 @@ const LoginPage = ({ loginSuccess }) => {
       <h2>Login terlebih dahulu</h2>
       <FormInput handler={onLoginHandler} data={loginMapping} />
       <p>
-        Belum punya akun? <Link to="/register">Daftar di sini.</Link>
+        Belum punya akun? <Link to="/notes-app/register">Daftar di sini.</Link>
       </p>
     </section>
   );

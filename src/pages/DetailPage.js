@@ -22,17 +22,17 @@ const DetailPage = () => {
 
   const onArchiveHandler = async (id) => {
     await archiveNote(id);
-    navigate('/');
+    navigate('/notes-app');
   };
 
   const onUnArchiveHandler = async (id) => {
     await unarchiveNote(id);
-    navigate('/archives');
+    navigate('/notes-app/archives');
   };
 
   const onDeleteHandler = async ({ id, archived }) => {
     await deleteNote(id);
-    navigate(archived ? '/archives' : '/');
+    navigate(archived ? '/notes-app/archives' : '/notes-app');
   };
 
   if (detailNote === null) {

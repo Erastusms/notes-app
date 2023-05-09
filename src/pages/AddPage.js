@@ -8,7 +8,7 @@ const AddPage = () => {
 
   const onAddNoteHandler = (notes) => {
     addNote(notes);
-    navigate('/');
+    navigate('/notes-app');
   };
 
   return <NoteInput addNote={onAddNoteHandler} />;

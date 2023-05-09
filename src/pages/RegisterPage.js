@@ -8,7 +8,7 @@ const RegisterPage = () => {
   const navigate = useNavigate();
   const onRegisterHandler = async ({ name, email, password }) => {
     const { error } = await register({ name, email, password });
-    if (!error) navigate('/');
+    if (!error) navigate('/notes-app');
   };
 
   const registerMapping = {
@@ -26,7 +26,7 @@ const RegisterPage = () => {
         key={registerMapping.className}
       />
       <p>
-        Kembali ke <Link to="/">Masuk</Link>
+        Kembali ke <Link to="/notes-app">Masuk</Link>
       </p>
     </section>
   );

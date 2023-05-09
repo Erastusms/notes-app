@@ -8,7 +8,7 @@ const Navigation = ({ logout, name }) => {
     <nav className="navigation">
       <ul>
         <li>
-          <Link to="/archives">Arsip</Link>
+          <Link to="/notes-app/archives">Arsip</Link>
         </li>
         <li>
           <button onClick={logout} className="button-logout">
